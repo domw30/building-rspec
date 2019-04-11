@@ -1,12 +1,12 @@
-# # Exercise 1
+# Exercise 1
 
 # def expect_to_be_equal(x, y)
-#   'Test passes! :)' if x == true && y == true
-#   'Test fails! D:' if x == true && y == false
+#   puts 'Test passes! :)' if x == true && y == true
+#   puts 'Test fails! D:' if x == true && y == false
 # end
 #
-# puts expect_to_be_equal(true, false)
-# puts expect_to_be_equal(true, true)
+# expect_to_be_equal(true, false)
+# expect_to_be_equal(true, true)
 #
 
 # Exercise 2
@@ -52,42 +52,7 @@
 
 
 # Exercise 4
-
-class Expect
-
-  def initialize(value)
-    @value = value
-  end
-
-  def to(comparison)
-    if comparison == true
-      puts "Test passes! :)"
-    else
-      puts "Test fails! D:"
-    end
-  end
-
-end
-
-
-class Equal
-
-  def compare(y)
-    if y == true
-      true
-    else y == false
-      false
-    end
-  end
-
-end
-
-
-expect = Expect.new(true)
-equal = Equal.new
-expect.to(equal.compare(false))
-
-
+#
 # class Expect
 #
 #   def initialize(value)
@@ -95,7 +60,7 @@ expect.to(equal.compare(false))
 #   end
 #
 #   def to(comparison)
-#     if comparison.value == @value
+#     if comparison == true
 #       puts "Test passes! :)"
 #     else
 #       puts "Test fails! D:"
@@ -106,12 +71,6 @@ expect.to(equal.compare(false))
 #
 #
 # class Equal
-#
-#   attr_reader :value
-#
-#   def initialize(value)
-#     @value = value
-#   end
 #
 #   def compare(y)
 #     if y == true
@@ -125,5 +84,43 @@ expect.to(equal.compare(false))
 #
 #
 # expect = Expect.new(true)
-# equal = Equal.new(false)
-# expect.to(equal)
+# equal = Equal.new
+# expect.to(equal.compare(true))
+
+
+class Expect
+
+  def initialize(value)
+    @value = value
+  end
+
+  def to(comparison)
+    if comparison.value == @value
+      puts "Test passes! :)"
+    else
+      puts "Test fails! D:"
+    end
+  end
+
+end
+
+
+class Equal
+
+  attr_reader :value
+
+  def initialize(value)
+    @value = value
+  end
+
+end
+
+def eq(value)
+  Equal.new(value)
+end
+
+def expect(value)
+  Expect.new(value)
+end
+
+expect(true).to eq true
