@@ -113,7 +113,7 @@ Let's zoom in on Equal:
 
 Get to this:
 
-# Note — we're talking about `Equal`, not `Expect`
+Note — we're talking about `Equal`, not `Expect`
 ```
 > Equal.new(true).compare(true)
 => true
