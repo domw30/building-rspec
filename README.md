@@ -8,6 +8,8 @@ In the process, I will attempt to prove that our tools aren't magic. They're mad
 
 The exercise structure is stated below.
 
+I have completed the exercises in exercise_1.rb file. exercise_spec.rb has been used to reference tests purely as notes.
+
 ## Exercise 1
 We won't be using RSpec today — we'll be building our own version of it. So don't worry about requiring it or installing it.
 
